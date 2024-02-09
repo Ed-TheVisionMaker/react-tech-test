@@ -1,9 +1,16 @@
 
 
 .drinksContainer{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  width: 2000px;
+  max-width: 100%; 
+  border: 1px solid pink; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(500px, 1fr));
+}
+
+.drinkWrapper {
+ display: flex;
 }
 
 .drinkImage {
