@@ -1,3 +1,14 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.homeTitle {
+  font-size: 48px;
+}
+
 .drinksContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -5,14 +16,12 @@
 }
 
 .drinkListItem {
-  border: 1px solid blue;
 }
 
 .drinkDisplayWrapper {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid orange;
 }
 
 .drinkImageWrapper {
