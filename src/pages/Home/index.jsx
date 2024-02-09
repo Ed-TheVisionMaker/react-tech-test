@@ -34,14 +34,14 @@ function Home() {
   }, []);
 
   return (
-    <div className={'homeContainer'}>
-      <h2 className={'homeTitle'}>Punk Drinks</h2>
-      <ul className={'drinksContainer'}>
+    <div className={'home_Container'}>
+      <h2 className={'home_Title'}>Punk Drinks</h2>
+      <ul className={'home_drinksContainer'}>
         {drinkList.map((drink) => (
-          <Link className='link' to={`drink/${drink.id}`}>
-            <li className='drinkListItem' key={drink.id}>
-              <div className={'drinkDisplayWrapper'}>
-                <DisplayDrink drink={drink} />
+          <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
+            <li className='home_drinkListItem'>
+              <div className={'home_drinkDisplayWrapper'}>
+                <DisplayDrink drink={drink}  location={'Home'} />
                 <DisplayText drink={drink} location={'Home'} />
               </div>
             </li>

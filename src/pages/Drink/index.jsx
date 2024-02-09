@@ -32,16 +32,17 @@ function Drink() {
   };
 
   const extractRequiredData = (data) => {
-    const { name, image_url, abv, tagline, description, food_pairing } =
+
+    const { name, image_url: imageUrl, abv, tagline, description, food_pairing: foodPairing } =
       data[0];
 
-    const foodPairingWithId = food_pairing.map((food, i) => {
+    const foodPairingWithId = foodPairing.map((food, i) => {
       return { description: food, id: i + 1 };
     });
 
     return {
       name,
-      imageUrl: image_url,
+      imageUrl,
       abv,
       tagline,
       description,
@@ -54,9 +55,11 @@ function Drink() {
   }, []);
 
   return (
-    <div className={'drinkContainer'}>
-      <DisplayDrink drink={drinkData} />
+    <div className={'drink_drinkContainer'}>
+      <div className={'drink_drinkWrapper'}>
+      <DisplayDrink drink={drinkData} location={'Drink'} />
       <DisplayText drink={drinkData} location={'Drink'} />
+      </div>
     </div>
   );
 }

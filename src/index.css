@@ -7,6 +7,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: flex;
+  justify-content: center;
 }
 
 body {
@@ -31,6 +34,10 @@ h2 {
 
 .link {
   text-decoration: none;
+}
+
+p {
+  margin: 0;
 }
 
 
