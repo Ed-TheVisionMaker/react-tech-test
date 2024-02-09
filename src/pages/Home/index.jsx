@@ -22,7 +22,7 @@ function Home() {
     return drinksRequired.map((drink) => {
       return {
         id: drink.id,
-        image: drink.image_url,
+        imageUrl: drink.image_url,
         name: drink.name,
         description: drink.description,
       };
@@ -38,11 +38,11 @@ function Home() {
       <h2 className={'homeTitle'}>Punk Drinks</h2>
       <ul className={'drinksContainer'}>
         {drinkList.map((drink) => (
-          <Link className='link' to={`/drink:${drink.id}`}>
+          <Link className='link' to={`drink/${drink.id}`}>
             <li className='drinkListItem' key={drink.id}>
               <div className={'drinkDisplayWrapper'}>
                 <DisplayDrink drink={drink} />
-                <DisplayText drink={drink} />
+                <DisplayText drink={drink} location={'Home'} />
               </div>
             </li>
           </Link>

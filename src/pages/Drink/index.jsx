@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import DisplayDrink from '../../components/DisplayDrink';
+import DisplayText from '../../components/DisplayText';
 
 {
   /*The detail screen should display the
@@ -23,7 +25,6 @@ function Drink() {
         `https://api.punkapi.com/v2/beers/${id}`
       );
       const drinkData = extractRequiredData(data);
-      console.log(drinkData, 'drinkData');
       setDrinkData(drinkData);
     } catch (error) {
       console.error(error);
@@ -33,13 +34,18 @@ function Drink() {
   const extractRequiredData = (data) => {
     const { name, image_url, abv, tagline, description, food_pairing } =
       data[0];
+
+    const foodPairingWithId = food_pairing.map((food, i) => {
+      return { description: food, id: i + 1 };
+    });
+
     return {
       name,
       imageUrl: image_url,
       abv,
       tagline,
       description,
-      foodPairing: food_pairing,
+      foodPairing: foodPairingWithId,
     };
   };
 
@@ -47,7 +53,12 @@ function Drink() {
     fetchDrinkData(id);
   }, []);
 
-  return <div>{drinkData.abv}</div>;
+  return (
+    <div className={'drinkContainer'}>
+      <DisplayDrink drink={drinkData} />
+      <DisplayText drink={drinkData} location={'Drink'} />
+    </div>
+  );
 }
 
 export default Drink;

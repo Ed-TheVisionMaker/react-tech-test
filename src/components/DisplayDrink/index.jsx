@@ -1,7 +1,7 @@
 function DisplayDrink({ drink }) {
-  const { name, image } = drink;
+  const { name, imageUrl } = drink;
   return (
-      <img className='drinkImage' src={image} alt={name} />
+      <img className='drinkImage' src={imageUrl} alt={name} />
   );
 }
 
