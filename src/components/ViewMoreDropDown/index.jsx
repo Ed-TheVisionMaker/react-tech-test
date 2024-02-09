@@ -1,4 +1,3 @@
-
 import { ClickAwayListener } from '@mui/base';
 
 function ViewMoreDropDown(props) {
@@ -8,7 +7,6 @@ function ViewMoreDropDown(props) {
     handleShowDropDown,
     handleClickAway,
     showDropDown,
-
   } = props;
 
   return (
