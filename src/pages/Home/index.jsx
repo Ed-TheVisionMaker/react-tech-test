@@ -21,6 +21,12 @@ function Home() {
     setShowDropDown((prevState) => !prevState);
   };
 
+  const handleClickAway = () => {
+    setShowDropDown((prevState) => !prevState);
+
+  }
+
+
   const fetchDefaultData = async () => {
     try {
       const { data } = await axios.get('https://api.punkapi.com/v2/beers');
@@ -93,6 +99,7 @@ function Home() {
             handleNumberChange={handleNumberChange}
             handleShowDropDown={handleShowDropDown}
             showDropDown={showDropDown}
+            handleClickAway={handleClickAway}
           />
         </span>
       </p>
