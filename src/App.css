@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.homeTitle {
+  font-size: 48px;
+}
+
+.drinksContainer {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 1200px;
+  gap:20px;
+}
+
+.drinkListItem {
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  border: 1px solid orange;
+  height: 100%
+}
+
+.drinkDisplayWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.drinkImageWrapper {
+  display: 'flex';
+  flex-direction: 'column';
+  flex-grow: 1;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: space-between;
+  color: black;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.drinkDescription {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drinkImage {
+  height: 250px;
+  object-fit: contain;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.drinkName {
+  font-size: 20px;
+  margin-top: 30px;
 }
 
-.card {
-  padding: 2em;
+.drinkNameSpan {
+  font-size: 12px;
 }
 
-.read-the-docs {
-  color: #888;
-}
