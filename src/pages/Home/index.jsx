@@ -27,7 +27,6 @@ function Home() {
   };
 
   useEffect(() => {
-    console.log('useEffect called');
     fetchDrinkData();
   }, []);
 
