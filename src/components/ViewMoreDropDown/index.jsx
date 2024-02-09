@@ -4,8 +4,8 @@ function ViewMoreDropDown(props) {
   return (
     <div className='view-more-container'>
       <div className='view-more-display-wrapper'>
-        <div>{numberOfDrinks}</div>
-        <button onClick={() => handleShowDropDown()}>
+        <div className={'view-more-display-number'}>{numberOfDrinks}</div>
+        <button className={'view-more-dropdown-button'} onClick={() => handleShowDropDown()}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -24,13 +24,13 @@ function ViewMoreDropDown(props) {
       </div>
       {showDropDown && (
         <div className='view-more-options-wrapper'>
-          <button id='button1' onClick={(e) => handleNumberChange(e)}>
+          <button className='view-more-options-button' onClick={(e) => handleNumberChange(e)}>
             10
           </button>
-          <button id='button2' onClick={(e) => handleNumberChange(e)}>
+          <button className='view-more-options-button' onClick={(e) => handleNumberChange(e)}>
             20
           </button>
-          <button id='button3' onClick={(e) => handleNumberChange(e)}>
+          <button className='view-more-options-button' onClick={(e) => handleNumberChange(e)}>
             30
           </button>
         </div>

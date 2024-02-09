@@ -21,7 +21,6 @@ function Home() {
     setShowDropDown((prevState) => !prevState);
   };
 
-
   const fetchDefaultData = async () => {
     try {
       const { data } = await axios.get('https://api.punkapi.com/v2/beers');
@@ -84,13 +83,20 @@ function Home() {
 
   return (
     <div className={'home_Container'}>
-      <h2 className={'home_Title'}>Punk Drinks</h2>
-      <ViewMoreDropDown
-        numberOfDrinks={numberOfDrinks}
-        handleNumberChange={handleNumberChange}
-        handleShowDropDown={handleShowDropDown}
-        showDropDown={showDropDown}
-      />
+      <h2 className={'home_Title'}>BrewDog</h2>
+      <h3 className={'home-tagline'}>Something for everyone</h3>
+      <p className={'home-dropdown-container'}>
+        Drinks Per Page
+        <span className={'home-dropdown-text-span'}>
+          <ViewMoreDropDown
+            numberOfDrinks={numberOfDrinks}
+            handleNumberChange={handleNumberChange}
+            handleShowDropDown={handleShowDropDown}
+            showDropDown={showDropDown}
+          />
+        </span>
+      </p>
+
       <ul className={'home_drinksContainer'}>
         {drinksList.map((drink) => (
           <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
