@@ -38,7 +38,7 @@ function Home() {
       <h2 className={'homeTitle'}>Punk Drinks</h2>
       <ul className={'drinksContainer'}>
         {drinkList.map((drink) => (
-          <Link className='link' to={`/drink`}>
+          <Link className='link' to={`/drink:${drink.id}`}>
             <li className='drinkListItem' key={drink.id}>
               <div className={'drinkDisplayWrapper'}>
                 <DisplayDrink drink={drink} />
