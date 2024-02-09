@@ -1,27 +1,32 @@
-
-
-.drinksContainer{
+.drinksContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   width: 1000px;
-  border: 1px solid pink;
+}
+
+.drinkListItem {
+  border: 1px solid blue;
 }
 
 .drinkDisplayWrapper {
- display: flex;
- flex-direction: column;
- justify-content: center;
- padding: 20px;
- border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid orange;
 }
 
 .drinkImageWrapper {
   display: 'flex';
   flex-direction: 'column';
+  flex-grow: 1;
 }
 
 .textWrapper {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  justify-content: space-between;
+  color: black;
 }
 
 .drinkDescription {
@@ -32,15 +37,16 @@
 }
 
 .drinkImage {
-  height: 100px;
-  padding-left: 40px;
-  object-fit:contain;
+  height: 250px;
+  object-fit: contain;
 }
 
 .drinkName {
-  font-size: 28px;
-  background-color: pink;
+  font-size: 20px;
+  margin-top: 30px;
 }
 
-
+.drinkNameSpan {
+  font-size: 12px;
+}
 

@@ -37,7 +37,7 @@ function Home() {
     <div>
       <ul className={'drinksContainer'}>
         {drinkList.map((drink) => (
-          <li>
+          <li className='drinkListItem' key={drink}>
             <Link to={`/drink`}>
               <div className={'drinkDisplayWrapper'}>
                 <DisplayDrink drink={drink} />

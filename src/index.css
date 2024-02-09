@@ -11,19 +11,26 @@
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: black;
 }
 
 ul {
+  padding: 0;
   list-style: none;
 }
 
 h2 {
   margin: 0;
+}
+
+.link {
+  text-decoration: none;
 }
 
 
