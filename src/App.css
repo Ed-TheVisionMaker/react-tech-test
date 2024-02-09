@@ -113,10 +113,14 @@
 
 .drink_foodPairingItem {
   margin: 10px 60px 10px;
-
-  /* margin: 10px 40px 10px; */
   border-bottom: 2px solid rgba(0, 0, 0, 0.304);
 }
 
-.drink_foodPairingItem:first-child {
+.nav_button {
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.304);
+  border-radius: 30px;
+  padding: 10px 10px;
+  cursor: pointer;
+
 }
