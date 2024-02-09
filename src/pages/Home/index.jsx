@@ -3,10 +3,12 @@ import axios from 'axios';
 import DisplayDrink from '../../components/DisplayDrink';
 import DisplayText from '../../components/DisplayText';
 import ViewMoreDropDown from '../../components/ViewMoreDropDown';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [drinksList, setDrinksList] = useState([]);
   const [numberOfDrinks, setNumberOfDrinks] = useState(10);
   const [showDropDown, setShowDropDown] = useState(false);
@@ -23,9 +25,7 @@ function Home() {
 
   const handleClickAway = () => {
     setShowDropDown((prevState) => !prevState);
-
-  }
-
+  };
 
   const fetchDefaultData = async () => {
     try {
@@ -56,6 +56,7 @@ function Home() {
       data = await fetchLargeData();
     }
     createDrinksList(data);
+    setIsLoading(false);
   };
 
   const trimDrinkData = (data) => {
@@ -88,35 +89,40 @@ function Home() {
   }, [numberOfDrinks]);
 
   return (
-    <div className={'home_Container'}>
-      <h2 className={'home_Title'}>BrewDog</h2>
-      <h3 className={'home-tagline'}>Something for everyone</h3>
-      <p className={'home-dropdown-container'}>
-        Drinks Per Page
-        <span className={'home-dropdown-text-span'}>
-          <ViewMoreDropDown
-            numberOfDrinks={numberOfDrinks}
-            handleNumberChange={handleNumberChange}
-            handleShowDropDown={handleShowDropDown}
-            showDropDown={showDropDown}
-            handleClickAway={handleClickAway}
-          />
-        </span>
-      </p>
+    <>
+      {isLoading && <LoadingSpinner />}
+      {!isLoading && (
+        <div className={'home_Container'}>
+          <h2 className={'home_Title'}>BrewDog</h2>
+          <h3 className={'home-tagline'}>Something for everyone</h3>
+          <p className={'home-dropdown-container'}>
+            Drinks Per Page
+            <span className={'home-dropdown-text-span'}>
+              <ViewMoreDropDown
+                numberOfDrinks={numberOfDrinks}
+                handleNumberChange={handleNumberChange}
+                handleShowDropDown={handleShowDropDown}
+                showDropDown={showDropDown}
+                handleClickAway={handleClickAway}
+              />
+            </span>
+          </p>
 
-      <ul className={'home_drinksContainer'}>
-        {drinksList.map((drink) => (
-          <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
-            <li className='home_drinkListItem'>
-              <div className={'home_drinkDisplayWrapper'}>
-                <DisplayDrink drink={drink} location={'Home'} />
-                <DisplayText drink={drink} location={'Home'} />
-              </div>
-            </li>
-          </Link>
-        ))}
-      </ul>
-    </div>
+          <ul className={'home_drinksContainer'}>
+            {drinksList.map((drink) => (
+              <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
+                <li className='home_drinkListItem'>
+                  <div className={'home_drinkDisplayWrapper'}>
+                    <DisplayDrink drink={drink} location={'Home'} />
+                    <DisplayText drink={drink} location={'Home'} />
+                  </div>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }
 

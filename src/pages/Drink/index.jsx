@@ -4,6 +4,7 @@ import axios from 'axios';
 import DisplayDrink from '../../components/DisplayDrink';
 import DisplayText from '../../components/DisplayText';
 import NavButton from '../../components/NavButton';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 {
   /*The detail screen should display the
@@ -16,6 +17,7 @@ and one other piece of data of your choice. */
 }
 
 function Drink() {
+  const [isLoading, setIsLoading] = useState(true);
   const [drinkData, setDrinkData] = useState({});
   const params = useParams();
   const id = params.drinkId;
@@ -58,16 +60,22 @@ function Drink() {
 
   useEffect(() => {
     fetchDrinkData(id);
+    setIsLoading(false);
   }, []);
 
   return (
+    <>
+    {isLoading && <LoadingSpinner />}
+    {!isLoading && (
     <div className={'drink_drinkContainer'}>
-      <div className={'drink_drinkWrapper'}>
-        <DisplayDrink drink={drinkData} location={'Drink'} />
-        <DisplayText drink={drinkData} location={'Drink'} />
-        <NavButton />
-      </div>
+    <div className={'drink_drinkWrapper'}>
+      <DisplayDrink drink={drinkData} location={'Drink'} />
+      <DisplayText drink={drinkData} location={'Drink'} />
+      <NavButton />
     </div>
+  </div>
+    )}
+    </>
   );
 }
 
