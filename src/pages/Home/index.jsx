@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DisplayDrink from '../../components/DisplayDrink';
 import DisplayText from '../../components/DisplayText';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [drinkList, setDrinkList] = useState([]);
@@ -36,11 +37,13 @@ function Home() {
     <div>
       <ul className={'drinksContainer'}>
         {drinkList.map((drink) => (
-          <li key={drink.id}>
-            <div className={'drinkWrapper'}>
-              <DisplayText drink={drink} />
-              <DisplayDrink drink={drink} />
-            </div>
+          <li>
+            <Link to={`/drink`}>
+              <div className={'drinkDisplayWrapper'}>
+                <DisplayDrink drink={drink} />
+                <DisplayText drink={drink} />
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

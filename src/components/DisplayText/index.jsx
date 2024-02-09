@@ -1,9 +1,10 @@
 function DisplayText({ drink }) {
   const { name, description } = drink;
+
   return (
-    <div>
-      <h2>{name}</h2>
-      <p>{description}</p>
+    <div className='textWrapper'>
+      <h2 className='drinkName'>{name}</h2>
+      <p className='drinkDescription'>{description}</p>
     </div>
   );
 }
