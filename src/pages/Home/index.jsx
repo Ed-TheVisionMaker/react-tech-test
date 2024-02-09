@@ -31,11 +31,7 @@ function Home() {
     fetchDrinkData();
   }, []);
 
-  return <div>
-    <ul>
-        {drinkList.map((drink) => (<li key={drink.id}>{drink.name}</li>))}
-    </ul>
-  </div>;
+  return <div>Home</div>;
 }
 
 export default Home;
