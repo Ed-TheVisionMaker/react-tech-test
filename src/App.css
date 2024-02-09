@@ -61,11 +61,6 @@
   object-fit: contain;
 }
 
-.home-chevronDown {
-  width: 20px;
-  height: 20px;
-}
-
 .drink_drinkContainer {
   display: flex;
   flex-direction: column;
@@ -130,7 +125,7 @@
 
 }
 
-.viewMore_Container {
+.view-more-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -138,11 +133,16 @@
   font-variant-numeric: tabular-nums;
 }
 
-.viewMore_displayWrapper {
+.view-more-display-wrapper {
   display: flex;
 }
 
-.viewMore_optionsWrapper {
+.view-more-chevron-down {
+  width: 20px;
+  height: 20px;
+}
+
+.view-more-options-wrapper {
   position: absolute;
   top: 0;
   left: 0;
