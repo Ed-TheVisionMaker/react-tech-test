@@ -3,7 +3,6 @@ function NavButton() {
   const navigate = useNavigate();
 
   const navigateToHome = () => {
-    console.log('navigating to home');
     navigate('/');
   };
   return (
