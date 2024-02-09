@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import DisplayDrink from '../../components/DisplayDrink';
 
 function Home() {
   const [drinkList, setDrinkList] = useState([]);
@@ -32,9 +33,11 @@ function Home() {
 
   return (
     <div>
-      <ul>
+      <ul className={'drinksContainer'}>
         {drinkList.map((drink) => (
-          <li key={drink.id}>{drink.name}</li>
+          <li key={drink.id}>
+            <DisplayDrink drink={drink} />
+          </li>
         ))}
       </ul>
     </div>
