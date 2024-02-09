@@ -61,6 +61,11 @@
   object-fit: contain;
 }
 
+.home-chevronDown {
+  width: 20px;
+  height: 20px;
+}
+
 .drink_drinkContainer {
   display: flex;
   flex-direction: column;

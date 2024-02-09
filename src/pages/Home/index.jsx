@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DisplayDrink from '../../components/DisplayDrink';
 import DisplayText from '../../components/DisplayText';
+import ViewMoreDropDown from '../../components/ViewMoreDropDown';
+
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -36,6 +38,7 @@ function Home() {
   return (
     <div className={'home_Container'}>
       <h2 className={'home_Title'}>Punk Drinks</h2>
+      <ViewMoreDropDown />
       <ul className={'home_drinksContainer'}>
         {drinkList.map((drink) => (
           <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
