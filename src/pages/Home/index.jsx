@@ -35,17 +35,19 @@ function Home() {
 
   return (
     <div className={'homeContainer'}>
-        <h2 className={'homeTitle'}>Punk Drinks Available</h2>
+      <h2 className={'homeTitle'}>Punk Drinks Available</h2>
       <ul className={'drinksContainer'}>
         {drinkList.map((drink) => (
-          <li className='drinkListItem' key={drink}>
-            <Link className='link' to={`/drink`}>
+          <Link className='link' to={`/drink`}>
+            <li className='drinkListItem' key={drink}>
+              {/* <Link className='link' to={`/drink`}> */}
               <div className={'drinkDisplayWrapper'}>
                 <DisplayDrink drink={drink} />
                 <DisplayText drink={drink} />
               </div>
-            </Link>
-          </li>
+              {/* </Link> */}
+            </li>
+          </Link>
         ))}
       </ul>
     </div>
