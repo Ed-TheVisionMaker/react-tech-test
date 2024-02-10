@@ -91,34 +91,36 @@ function Home() {
     <>
       {isLoading && <LoadingSpinner />}
       {!isLoading && (
-        <div className={'home-container'}>
-          <h2 className={'home-title'}>BrewDog</h2>
-          <h3 className={'home-tagline'}>Something for everyone</h3>
-          <p className={'home-dropdown-container'}>
-            Drinks Per Page
-            <span className={'home-dropdown-text-span'}>
-              <Dropdown
-                numberOfDrinks={numberOfDrinks}
-                handleNumberChange={handleNumberChange}
-                handleShowDropdown={handleShowDropdown}
-                showDropdown={showDropdown}
-                handleClickAway={handleClickAway}
-              />
-            </span>
-          </p>
+        <div className={'home-wrapper'}>
+          <div className={'home-container'}>
+            <h2 className={'home-title'}>BrewDog</h2>
+            <h3 className={'home-tagline'}>Something for everyone</h3>
+            <p className={'home-dropdown-container'}>
+              Drinks Per Page
+              <span className={'home-dropdown-text-span'}>
+                <Dropdown
+                  numberOfDrinks={numberOfDrinks}
+                  handleNumberChange={handleNumberChange}
+                  handleShowDropdown={handleShowDropdown}
+                  showDropdown={showDropdown}
+                  handleClickAway={handleClickAway}
+                />
+              </span>
+            </p>
 
-          <ul className={'home-drinks-container'}>
-            {drinksList.map((drink) => (
-              <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
-                <li className='home-drink-list-item'>
-                  <div className={'home-drink-display-wrapper'}>
-                    <DrinkImage drinkData={drink} location={'Home'} />
-                    <DrinkText drinkData={drink} location={'Home'} />
-                  </div>
-                </li>
-              </Link>
-            ))}
-          </ul>
+            <ul className={'home-drinks-container'}>
+              {drinksList.map((drink) => (
+                <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
+                  <li className='home-drink-list-item'>
+                    <div className={'home-drink-display-wrapper'}>
+                      <DrinkImage drinkData={drink} location={'Home'} />
+                      <DrinkText drinkData={drink} location={'Home'} />
+                    </div>
+                  </li>
+                </Link>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </>
