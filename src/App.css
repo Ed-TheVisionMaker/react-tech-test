@@ -1,3 +1,11 @@
+.home-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100vw;
+  height: 100vh;
+}
+
 .home-container {
   position: relative;
   display: flex;
@@ -75,7 +83,7 @@
   align-items: center;
 }
 
-.home-dropdown-text-span{
+.home-dropdown-text-span {
   margin-left: 5px;
 }
 
@@ -126,7 +134,7 @@
 
 .drink-food-pairing-list {
   font-size: 22px;
-  margin-top:40px;
+  margin-top: 40px;
 }
 
 .drink-food-pairing-item {
