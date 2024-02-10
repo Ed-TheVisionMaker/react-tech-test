@@ -3,7 +3,7 @@ import axios from 'axios';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import Dropdown from '../../components/DropdownMenu';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 import { Link } from 'react-router-dom';
 

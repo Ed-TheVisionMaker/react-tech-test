@@ -4,7 +4,7 @@ import axios from 'axios';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import NavButton from '../../components/NavButton';
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 {
   /*The detail screen should display the
