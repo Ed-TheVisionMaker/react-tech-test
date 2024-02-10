@@ -1,5 +1,5 @@
-function DrinkText({ drink, location }) {
-  const { name, description, tagline, abv, foodPairing } = drink;
+function DrinkText({ drinkData, location }) {
+  const { name, description, tagline, abv, foodPairing } = drinkData;
 
  const textHomePage = () => {
   return (

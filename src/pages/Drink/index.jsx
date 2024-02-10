@@ -60,7 +60,7 @@ function Drink() {
         <div className={'drink-drink-container'}>
           <div className={'drink-drink-wrapper'}>
             <DrinkImage drinkData={drinkData} location={'Drink'} />
-            <DrinkText drink={drinkData} location={'Drink'} />
+            <DrinkText drinkData={drinkData} location={'Drink'} />
             <NavButton />
           </div>
         </div>
