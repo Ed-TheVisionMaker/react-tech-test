@@ -24,11 +24,11 @@ function DrinkText({ drink, location }) {
  }
 
  const textDrinkPage = () => {
-    const taglineNoPeriod = tagline?.replace('.', '')
+    const taglinePeriodRemoved = tagline?.replace('.', '')
   return (
     <div className='drink-text-wrapper'>
       <h2 className='drink-drink-name'>{name}</h2>
-      <p className='drink-tagline'>{taglineNoPeriod}</p>
+      <p className='drink-tagline'>{taglinePeriodRemoved}</p>
       <p className='drink-abv'>{`${abv}%`}</p>
       <p className='drink-description'>{description}</p>
       {foodPairingList()}
@@ -38,7 +38,7 @@ function DrinkText({ drink, location }) {
 
   return (
     <>
-    {location === 'Home'&& textHomePage()}
+    {location === 'Home' && textHomePage()}
     {location === 'Drink' && textDrinkPage()}
     </>
   );
