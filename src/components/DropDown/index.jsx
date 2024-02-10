@@ -1,6 +1,6 @@
 import { ClickAwayListener } from '@mui/base';
 
-function ViewMoreDropDown(props) {
+function Dropdown(props) {
   const {
     numberOfDrinks,
     handleNumberChange,
@@ -61,4 +61,4 @@ function ViewMoreDropDown(props) {
   );
 }
 
-export default ViewMoreDropDown;
+export default Dropdown;

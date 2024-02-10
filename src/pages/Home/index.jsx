@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
-import ViewMoreDropDown from '../../components/ViewMoreDropDown';
+import Dropdown from '../../components/DropDown';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 import { Link } from 'react-router-dom';
@@ -98,7 +98,7 @@ function Home() {
           <p className={'home-dropdown-container'}>
             Drinks Per Page
             <span className={'home-dropdown-text-span'}>
-              <ViewMoreDropDown
+              <Dropdown
                 numberOfDrinks={numberOfDrinks}
                 handleNumberChange={handleNumberChange}
                 handleShowDropDown={handleShowDropDown}
