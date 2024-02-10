@@ -107,7 +107,6 @@ function Home() {
                 />
               </span>
             </p>
-
             <ul className={'home-drinks-container'}>
               {drinksList.map((drink) => (
                 <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
