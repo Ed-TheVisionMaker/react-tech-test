@@ -29,6 +29,7 @@ function Drink() {
       );
       const drinkData = extractRequiredData(data);
       setDrinkData(drinkData);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -60,21 +61,20 @@ function Drink() {
 
   useEffect(() => {
     fetchDrinkData(id);
-    setIsLoading(false);
   }, []);
 
   return (
     <>
-    {isLoading && <LoadingSpinner />}
-    {!isLoading && (
-    <div className={'drink_drinkContainer'}>
-    <div className={'drink_drinkWrapper'}>
-      <DisplayDrink drink={drinkData} location={'Drink'} />
-      <DisplayText drink={drinkData} location={'Drink'} />
-      <NavButton />
-    </div>
-  </div>
-    )}
+      {isLoading && <LoadingSpinner />}
+      {!isLoading && (
+        <div className={'drink_drinkContainer'}>
+          <div className={'drink_drinkWrapper'}>
+            <DisplayDrink drink={drinkData} location={'Drink'} />
+            <DisplayText drink={drinkData} location={'Drink'} />
+            <NavButton />
+          </div>
+        </div>
+      )}
     </>
   );
 }
