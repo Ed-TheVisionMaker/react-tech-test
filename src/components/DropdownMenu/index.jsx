@@ -1,22 +1,23 @@
 import { ClickAwayListener } from '@mui/base';
+import './DropdownMenu.css';
 
-function ViewMoreDropDown(props) {
+function DropdownMenu(props) {
   const {
     numberOfDrinks,
     handleNumberChange,
-    handleShowDropDown,
+    handleShowDropdown,
     handleClickAway,
-    showDropDown,
+    showDropdown,
   } = props;
 
   return (
     <ClickAwayListener onClickAway={() => handleClickAway()}>
-      <div className='view-more-container'>
-        <div className='view-more-display-wrapper'>
-          <div className={'view-more-display-number'}>{numberOfDrinks}</div>
+      <div className='dropdown-container'>
+        <div className='dropdown-display-wrapper'>
+          <div className={'dropdown-display-number'}>{numberOfDrinks}</div>
           <button
-            className={'view-more-dropdown-button'}
-            onClick={() => handleShowDropDown()}
+            className={'dropdown-dropdown-button'}
+            onClick={() => handleShowDropdown()}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -24,7 +25,7 @@ function ViewMoreDropDown(props) {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='view-more-chevron-down'
+              className='dropdown-chevron-down'
             >
               <path
                 strokeLinecap='round'
@@ -34,22 +35,22 @@ function ViewMoreDropDown(props) {
             </svg>
           </button>
         </div>
-        {showDropDown && (
-          <div className='view-more-options-wrapper'>
+        {showDropdown && (
+          <div className='dropdown-options-wrapper'>
             <button
-              className='view-more-options-button'
+              className='dropdown-options-button'
               onClick={(e) => handleNumberChange(e)}
             >
               10
             </button>
             <button
-              className='view-more-options-button'
+              className='dropdown-options-button'
               onClick={(e) => handleNumberChange(e)}
             >
               20
             </button>
             <button
-              className='view-more-options-button'
+              className='dropdown-options-button'
               onClick={(e) => handleNumberChange(e)}
             >
               30
@@ -61,4 +62,4 @@ function ViewMoreDropDown(props) {
   );
 }
 
-export default ViewMoreDropDown;
+export default DropdownMenu;
