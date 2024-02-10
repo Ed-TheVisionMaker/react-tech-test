@@ -26,6 +26,10 @@ function Home() {
     setShowDropdown((prevState) => !prevState);
   };
 
+  const hasData = () => {
+    return drinksList.length > 0;
+  };
+
   const fetchDefaultData = async () => {
     try {
       const { data } = await axios.get('https://api.punkapi.com/v2/beers');
@@ -47,6 +51,7 @@ function Home() {
   };
 
   const fetchRequiredDrinks = async (numberOfDrinks) => {
+    if (hasData) setIsLoading(true);
     let data = [];
     if (numberOfDrinks === 10 || numberOfDrinks === 20) {
       data = await fetchDefaultData();
