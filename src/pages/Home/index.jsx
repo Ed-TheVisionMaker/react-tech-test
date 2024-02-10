@@ -51,7 +51,7 @@ function Home() {
   };
 
   const fetchRequiredDrinks = async (numberOfDrinks) => {
-    if (hasData) setIsLoading(true);
+    if (hasData()) setIsLoading(true);
     let data = [];
     if (numberOfDrinks === 10 || numberOfDrinks === 20) {
       data = await fetchDefaultData();
