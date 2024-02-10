@@ -113,7 +113,7 @@ function Home() {
               <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
                 <li className='home-drink-list-item'>
                   <div className={'home-drink-display-wrapper'}>
-                    <DrinkImage drink={drink} location={'Home'} />
+                    <DrinkImage drinkData={drink} location={'Home'} />
                     <DrinkText drink={drink} location={'Home'} />
                   </div>
                 </li>
