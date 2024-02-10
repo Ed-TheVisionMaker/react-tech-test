@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import DisplayDrink from '../../components/DisplayDrink';
+import DrinkImage from '../../components/DrinkImage';
 import DisplayText from '../../components/DisplayText';
 import ViewMoreDropDown from '../../components/ViewMoreDropDown';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
@@ -113,7 +113,7 @@ function Home() {
               <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
                 <li className='home_drinkListItem'>
                   <div className={'home_drinkDisplayWrapper'}>
-                    <DisplayDrink drink={drink} location={'Home'} />
+                    <DrinkImage drink={drink} location={'Home'} />
                     <DisplayText drink={drink} location={'Home'} />
                   </div>
                 </li>
