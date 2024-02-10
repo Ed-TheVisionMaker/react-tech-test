@@ -1,5 +1,5 @@
-function DrinkImage({ drink, location }) {
-  const { name, imageUrl } = drink;
+function DrinkImage({ drinkData, location }) {
+  const { name, imageUrl } = drinkData;
   return (
       <img className={location === 'Home' ? 'home-drink-image' : 'drink-drink-image'} src={imageUrl} alt={name} />
   );

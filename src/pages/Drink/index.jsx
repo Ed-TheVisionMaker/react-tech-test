@@ -6,16 +6,6 @@ import DrinkText from '../../components/DrinkText';
 import NavButton from '../../components/NavButton';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-{
-  /*The detail screen should display the
-drink's image,
-name of the drink, 
-alcohol by volume (abv),
-tagline,
-full description,
-and one other piece of data of your choice. */
-}
-
 function Drink() {
   const [isLoading, setIsLoading] = useState(true);
   const [drinkData, setDrinkData] = useState({});
@@ -69,8 +59,8 @@ function Drink() {
       {!isLoading && (
         <div className={'drink-drink-container'}>
           <div className={'drink-drink-wrapper'}>
-            <DrinkImage drink={drinkData} location={'Drink'} />
-            <DrinkText drink={drinkData} location={'Drink'} />
+            <DrinkImage drinkData={drinkData} location={'Drink'} />
+            <DrinkText drinkData={drinkData} location={'Drink'} />
             <NavButton />
           </div>
         </div>

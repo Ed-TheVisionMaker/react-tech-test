@@ -4,7 +4,6 @@ import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import Dropdown from '../../components/DropdownMenu';
 import LoadingSpinner from '../../components/LoadingSpinner';
-
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -113,8 +112,8 @@ function Home() {
               <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
                 <li className='home-drink-list-item'>
                   <div className={'home-drink-display-wrapper'}>
-                    <DrinkImage drink={drink} location={'Home'} />
-                    <DrinkText drink={drink} location={'Home'} />
+                    <DrinkImage drinkData={drink} location={'Home'} />
+                    <DrinkText drinkData={drink} location={'Home'} />
                   </div>
                 </li>
               </Link>
