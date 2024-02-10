@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import DrinkImage from '../../components/DrinkImage';
-import DisplayText from '../../components/DisplayText';
+import DrinkText from '../../components/DrinkText';
 import NavButton from '../../components/NavButton';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
@@ -67,10 +67,10 @@ function Drink() {
     <>
       {isLoading && <LoadingSpinner />}
       {!isLoading && (
-        <div className={'drink_drinkContainer'}>
+        <div className={'drink_drink-container'}>
           <div className={'drink_drinkWrapper'}>
             <DrinkImage drink={drinkData} location={'Drink'} />
-            <DisplayText drink={drinkData} location={'Drink'} />
+            <DrinkText drink={drinkData} location={'Drink'} />
             <NavButton />
           </div>
         </div>

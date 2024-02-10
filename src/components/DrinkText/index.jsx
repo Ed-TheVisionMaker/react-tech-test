@@ -1,4 +1,4 @@
-function DisplayText({ drink, location }) {
+function DrinkText({ drink, location }) {
   const { name, description, tagline, abv, foodPairing } = drink;
 
  const textHomePage = () => {
@@ -44,4 +44,4 @@ function DisplayText({ drink, location }) {
   );
 }
 
-export default DisplayText;
+export default DrinkText;
