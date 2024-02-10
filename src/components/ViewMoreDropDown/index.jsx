@@ -11,11 +11,11 @@ function ViewMoreDropDown(props) {
 
   return (
     <ClickAwayListener onClickAway={() => handleClickAway()}>
-      <div className='view-more-container'>
-        <div className='view-more-display-wrapper'>
-          <div className={'view-more-display-number'}>{numberOfDrinks}</div>
+      <div className='dropdown-container'>
+        <div className='dropdown-display-wrapper'>
+          <div className={'dropdown-display-number'}>{numberOfDrinks}</div>
           <button
-            className={'view-more-dropdown-button'}
+            className={'dropdown-dropdown-button'}
             onClick={() => handleShowDropDown()}
           >
             <svg
@@ -24,7 +24,7 @@ function ViewMoreDropDown(props) {
               viewBox='0 0 24 24'
               strokeWidth={1.5}
               stroke='currentColor'
-              className='view-more-chevron-down'
+              className='dropdown-chevron-down'
             >
               <path
                 strokeLinecap='round'
@@ -35,21 +35,21 @@ function ViewMoreDropDown(props) {
           </button>
         </div>
         {showDropDown && (
-          <div className='view-more-options-wrapper'>
+          <div className='dropdown-options-wrapper'>
             <button
-              className='view-more-options-button'
+              className='dropdown-options-button'
               onClick={(e) => handleNumberChange(e)}
             >
               10
             </button>
             <button
-              className='view-more-options-button'
+              className='dropdown-options-button'
               onClick={(e) => handleNumberChange(e)}
             >
               20
             </button>
             <button
-              className='view-more-options-button'
+              className='dropdown-options-button'
               onClick={(e) => handleNumberChange(e)}
             >
               30

@@ -3,20 +3,20 @@ function DrinkText({ drink, location }) {
 
  const textHomePage = () => {
   return (
-    <div className='home_textWrapper'>
-      <h2 className='home_drinkName'>{name}</h2>
-      <p className='home_drinkDescription'>{description}</p>
+    <div className='home-text-wrapper'>
+      <h2 className='home-drink-name'>{name}</h2>
+      <p className='home-drink-description'>{description}</p>
     </div>
   )
  }
 
  const foodPairingList = () => {
   return (
-    <div className='drink_foodPairingList'>
+    <div className='drink-food-pairing-list'>
       <h3>Food Pairing</h3>
       <ul>
         {foodPairing?.map((food) => (
-          <li className={'drink_foodPairingItem'} key={food.id}>{food.description}</li>
+          <li className={'drink-food-pairing-item'} key={food.id}>{food.description}</li>
         ))}
       </ul>
     </div>
@@ -26,11 +26,11 @@ function DrinkText({ drink, location }) {
  const textDrinkPage = () => {
     const taglineNoPeriod = tagline?.replace('.', '')
   return (
-    <div className='drink_textWrapper'>
-      <h2 className='drink_drinkName'>{name}</h2>
-      <p className='drink_tagline'>{taglineNoPeriod}</p>
-      <p className='drink_abv'>{`${abv}%`}</p>
-      <p className='drink_description'>{description}</p>
+    <div className='drink-text-wrapper'>
+      <h2 className='drink-drink-name'>{name}</h2>
+      <p className='drink-tagline'>{taglineNoPeriod}</p>
+      <p className='drink-abv'>{`${abv}%`}</p>
+      <p className='drink-description'>{description}</p>
       {foodPairingList()}
     </div>
   )

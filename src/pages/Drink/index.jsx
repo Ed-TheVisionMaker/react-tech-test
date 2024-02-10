@@ -67,8 +67,8 @@ function Drink() {
     <>
       {isLoading && <LoadingSpinner />}
       {!isLoading && (
-        <div className={'drink_drink-container'}>
-          <div className={'drink_drinkWrapper'}>
+        <div className={'drink-drink-container'}>
+          <div className={'drink-drink-wrapper'}>
             <DrinkImage drink={drinkData} location={'Drink'} />
             <DrinkText drink={drinkData} location={'Drink'} />
             <NavButton />

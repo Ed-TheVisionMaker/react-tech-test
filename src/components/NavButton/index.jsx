@@ -7,7 +7,7 @@ function NavButton() {
   };
   return (
     <div>
-      <button className='nav_button' onClick={navigateToHome}>
+      <button className='nav-button' onClick={navigateToHome}>
         Return to List
       </button>
     </div>

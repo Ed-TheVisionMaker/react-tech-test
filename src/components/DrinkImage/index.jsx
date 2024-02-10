@@ -1,7 +1,7 @@
 function DrinkImage({ drink, location }) {
   const { name, imageUrl } = drink;
   return (
-      <img className={location === 'Home' ? 'home_drinkImage' : 'drink_drinkImage'} src={imageUrl} alt={name} />
+      <img className={location === 'Home' ? 'home-drink-image' : 'drink-drink-image'} src={imageUrl} alt={name} />
   );
 }
 

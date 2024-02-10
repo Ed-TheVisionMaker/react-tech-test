@@ -92,8 +92,8 @@ function Home() {
     <>
       {isLoading && <LoadingSpinner />}
       {!isLoading && (
-        <div className={'home_Container'}>
-          <h2 className={'home_Title'}>BrewDog</h2>
+        <div className={'home-container'}>
+          <h2 className={'home-title'}>BrewDog</h2>
           <h3 className={'home-tagline'}>Something for everyone</h3>
           <p className={'home-dropdown-container'}>
             Drinks Per Page
@@ -108,11 +108,11 @@ function Home() {
             </span>
           </p>
 
-          <ul className={'home_drinksContainer'}>
+          <ul className={'home-drinks-container'}>
             {drinksList.map((drink) => (
               <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
-                <li className='home_drinkListItem'>
-                  <div className={'home_drinkDisplayWrapper'}>
+                <li className='home-drink-list-item'>
+                  <div className={'home-drink-display-wrapper'}>
                     <DrinkImage drink={drink} location={'Home'} />
                     <DrinkText drink={drink} location={'Home'} />
                   </div>
