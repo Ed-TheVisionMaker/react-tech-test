@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import './NavButton.css'
+import './NavButton.css';
 
 function NavButton() {
   const navigate = useNavigate();
@@ -7,6 +7,7 @@ function NavButton() {
   const navigateToHome = () => {
     navigate('/');
   };
+
   return (
     <div>
       <button className='nav-button' onClick={navigateToHome}>
