@@ -15,7 +15,6 @@
   font-size: 28px;
   font-weight: 200;
   margin-bottom: 20px;
-
 }
 
 .home-drinks-container {
@@ -104,7 +103,7 @@
 .drink-drink-image {
   height: 400px;
   object-fit: contain;
-  }
+}
 
 .drink-drink-name {
   font-size: 36px;
