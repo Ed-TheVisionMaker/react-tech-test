@@ -4,9 +4,9 @@ function DropdownMenu(props) {
   const {
     numberOfDrinks,
     handleNumberChange,
-    handleShowDropDown,
+    handleShowDropdown,
     handleClickAway,
-    showDropDown,
+    showDropdown,
   } = props;
 
   return (
@@ -16,7 +16,7 @@ function DropdownMenu(props) {
           <div className={'dropdown-display-number'}>{numberOfDrinks}</div>
           <button
             className={'dropdown-dropdown-button'}
-            onClick={() => handleShowDropDown()}
+            onClick={() => handleShowDropdown()}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -34,7 +34,7 @@ function DropdownMenu(props) {
             </svg>
           </button>
         </div>
-        {showDropDown && (
+        {showDropdown && (
           <div className='dropdown-options-wrapper'>
             <button
               className='dropdown-options-button'

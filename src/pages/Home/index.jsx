@@ -11,20 +11,20 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [drinksList, setDrinksList] = useState([]);
   const [numberOfDrinks, setNumberOfDrinks] = useState(10);
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
-  const handleShowDropDown = () => {
-    setShowDropDown((prevState) => !prevState);
+  const handleShowDropdown = () => {
+    setShowDropdown((prevState) => !prevState);
   };
 
   const handleNumberChange = (e) => {
     const parseDrinksNumber = parseInt(e.target.innerText);
     setNumberOfDrinks(parseDrinksNumber);
-    setShowDropDown((prevState) => !prevState);
+    setShowDropdown((prevState) => !prevState);
   };
 
   const handleClickAway = () => {
-    setShowDropDown((prevState) => !prevState);
+    setShowDropdown((prevState) => !prevState);
   };
 
   const fetchDefaultData = async () => {
@@ -101,8 +101,8 @@ function Home() {
               <Dropdown
                 numberOfDrinks={numberOfDrinks}
                 handleNumberChange={handleNumberChange}
-                handleShowDropDown={handleShowDropDown}
-                showDropDown={showDropDown}
+                handleShowDropdown={handleShowDropdown}
+                showDropdown={showDropdown}
                 handleClickAway={handleClickAway}
               />
             </span>
