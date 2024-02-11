@@ -1,10 +1,10 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import axios from 'axios';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
-import NavButton from '../../components/NavButton';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import NavButton from '../../components/NavButton';
 
 function Drink() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,8 +57,8 @@ function Drink() {
     <>
       {isLoading && <LoadingSpinner />}
       {!isLoading && (
-        <div className={'drink-wrapper'}>
-          <div className={'drink-container'}>
+        <div className='drink-wrapper'>
+          <div className='drink-container'>
             <DrinkImage drinkData={drinkData} location={'Drink'} />
             <DrinkText drinkData={drinkData} location={'Drink'} />
             <NavButton />

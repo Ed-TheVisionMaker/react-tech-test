@@ -16,7 +16,7 @@ function DrinkText({ drinkData, location }) {
         <h3>Food Pairing</h3>
         <ul>
           {foodPairing?.map((food) => (
-            <li className={'drink-food-pairing-item'} key={food.id}>
+            <li className='drink-food-pairing-item' key={food.id}>
               {food.description}
             </li>
           ))}
