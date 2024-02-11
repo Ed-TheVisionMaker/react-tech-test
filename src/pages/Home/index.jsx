@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import DrinkImage from '../../components/DrinkImage';
 import DrinkText from '../../components/DrinkText';
 import Dropdown from '../../components/DropdownMenu';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import { Link } from 'react-router-dom';
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,17 +13,17 @@ function Home() {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleShowDropdown = () => {
-    setShowDropdown((prevState) => !prevState);
+    setShowDropdown((setShowDropdown) => !setShowDropdown);
   };
 
   const handleNumberChange = (e) => {
-    const parseDrinksNumber = parseInt(e.target.innerText);
-    setNumberOfDrinks(parseDrinksNumber);
-    setShowDropdown((prevState) => !prevState);
+    const parsedDrinksNumber = parseInt(e.target.innerText);
+    setNumberOfDrinks(parsedDrinksNumber);
+    setShowDropdown((setShowDropdown) => !setShowDropdown);
   };
 
   const handleClickAway = () => {
-    setShowDropdown((prevState) => !prevState);
+    setShowDropdown((setShowDropdown) => !setShowDropdown);
   };
 
   const hasData = () => {
@@ -50,7 +50,7 @@ function Home() {
     }
   };
 
-  const fetchRequiredDrinks = async (numberOfDrinks) => {
+  const fetchRequiredDrinks = async () => {
     if (hasData()) setIsLoading(true);
     let data = [];
     if (numberOfDrinks === 10 || numberOfDrinks === 20) {
@@ -96,13 +96,13 @@ function Home() {
     <>
       {isLoading && <LoadingSpinner />}
       {!isLoading && (
-        <div className={'home-wrapper'}>
-          <div className={'home-container'}>
-            <h2 className={'home-title'}>BrewDog</h2>
-            <h3 className={'home-tagline'}>Something for everyone</h3>
-            <p className={'home-dropdown-container'}>
+        <div className='home-wrapper'>
+          <div className='home-container'>
+            <h2 className='home-title'>BrewDog</h2>
+            <h3 className='home-tagline'>Something for everyone</h3>
+            <p className='home-dropdown-container'>
               Drinks Per Page
-              <span className={'home-dropdown-text-span'}>
+              <span className='home-dropdown-text-span'>
                 <Dropdown
                   numberOfDrinks={numberOfDrinks}
                   handleNumberChange={handleNumberChange}
@@ -112,11 +112,11 @@ function Home() {
                 />
               </span>
             </p>
-            <ul className={'home-drinks-container'}>
+            <ul className='home-drinks-container'>
               {drinksList.map((drink) => (
                 <Link className='link' key={drink.id} to={`drink/${drink.id}`}>
                   <li className='home-drink-list-item'>
-                    <div className={'home-drink-display-wrapper'}>
+                    <div className='home-drink-display-wrapper'>
                       <DrinkImage drinkData={drink} location={'Home'} />
                       <DrinkText drinkData={drink} location={'Home'} />
                     </div>

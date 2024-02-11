@@ -11,13 +11,13 @@ function DropdownMenu(props) {
   } = props;
 
   return (
-    <ClickAwayListener onClickAway={() => handleClickAway()}>
+    <ClickAwayListener onClickAway={handleClickAway}>
       <div className='dropdown-container'>
         <div className='dropdown-display-wrapper'>
-          <div className={'dropdown-display-number'}>{numberOfDrinks}</div>
+          <div className='dropdown-display-number'>{numberOfDrinks}</div>
           <button
-            className={'dropdown-dropdown-button'}
-            onClick={() => handleShowDropdown()}
+            className='dropdown-dropdown-button'
+            onClick={handleShowDropdown}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -39,19 +39,19 @@ function DropdownMenu(props) {
           <div className='dropdown-options-wrapper'>
             <button
               className='dropdown-options-button'
-              onClick={(e) => handleNumberChange(e)}
+              onClick={handleNumberChange}
             >
               10
             </button>
             <button
               className='dropdown-options-button'
-              onClick={(e) => handleNumberChange(e)}
+              onClick={handleNumberChange}
             >
               20
             </button>
             <button
               className='dropdown-options-button'
-              onClick={(e) => handleNumberChange(e)}
+              onClick={handleNumberChange}
             >
               30
             </button>
