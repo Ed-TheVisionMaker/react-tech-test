@@ -15,7 +15,8 @@ function DropdownMenu(props) {
   useEffect(() => {
     const storedNumberOfDrinks = sessionStorage.getItem('numberOfDrinks');
     if (storedNumberOfDrinks) {
-      setNumberOfDrinks(parseInt(storedNumberOfDrinks));
+      const parsedNumber = parseInt(storedNumberOfDrinks);
+      setNumberOfDrinks(parsedNumber);
     }
   }, []);
 
