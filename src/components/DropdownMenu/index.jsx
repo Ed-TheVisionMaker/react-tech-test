@@ -1,14 +1,23 @@
 import { ClickAwayListener } from '@mui/base';
 import './DropdownMenu.css';
+import { useEffect } from 'react';
 
 function DropdownMenu(props) {
   const {
     numberOfDrinks,
+    setNumberOfDrinks,
     handleNumberChange,
     handleShowDropdown,
     handleClickAway,
     showDropdown,
   } = props;
+
+  useEffect(() => {
+    const storedNumberOfDrinks = sessionStorage.getItem('numberOfDrinks');
+    if (storedNumberOfDrinks) {
+      setNumberOfDrinks(parseInt(storedNumberOfDrinks));
+    }
+  }, [])
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>

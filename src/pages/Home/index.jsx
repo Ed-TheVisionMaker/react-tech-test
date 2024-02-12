@@ -112,6 +112,7 @@ function Home() {
               <span className='home-dropdown-text-span'>
                 <Dropdown
                   numberOfDrinks={numberOfDrinks}
+                  setNumberOfDrinks={setNumberOfDrinks}
                   handleNumberChange={handleNumberChange}
                   handleShowDropdown={handleShowDropdown}
                   showDropdown={showDropdown}
