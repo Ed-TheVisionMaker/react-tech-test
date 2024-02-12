@@ -51,33 +51,33 @@ function Home() {
     }
   };
 
-  const fetchRequiredDrinks = async (number) => {
+  const fetchRequiredDrinks = async (drinksNumber) => {
     if (hasData()) setIsLoading(true);
     let data = [];
-    if (number === 10 || number === 20) {
+    if (drinksNumber === 10 || drinksNumber === 20) {
       data = await fetchDefaultData();
     }
-    if (number === 30) {
+    if (drinksNumber === 30) {
       data = await fetchLargeData();
     }
-    createDrinksList(data, number);
+    createDrinksList(data, drinksNumber);
     setIsLoading(false);
   };
 
-  const trimDrinkData = (data, number)=> {
+  const trimDrinkData = (data, drinksNumber)=> {
     let trimmedData = [];
-    if (number === 10) {
+    if (drinksNumber === 10) {
       trimmedData = data.slice(0, 10);
-    } else if (number === 20) {
+    } else if (drinksNumber === 20) {
       trimmedData = data.slice(0, 20);
-    } else if (number === 30) {
+    } else if (drinksNumber === 30) {
       trimmedData = data;
     }
     return trimmedData;
   };
 
-  const createDrinksList = (data, number) => {
-    const drinksRequired = trimDrinkData(data, number);
+  const createDrinksList = (data, drinksNumber) => {
+    const drinksRequired = trimDrinkData(data, drinksNumber);
     const drinksList = drinksRequired.map((drink) => {
       return {
         id: drink.id,
