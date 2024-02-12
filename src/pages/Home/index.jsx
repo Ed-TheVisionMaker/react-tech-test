@@ -19,6 +19,7 @@ function Home() {
   const handleNumberChange = (e) => {
     const parsedDrinksNumber = parseInt(e.target.innerText);
     setNumberOfDrinks(parsedDrinksNumber);
+    sessionStorage.setItem('numberOfDrinks', parsedDrinksNumber);
     setShowDropdown((setShowDropdown) => !setShowDropdown);
   };
 
@@ -50,33 +51,33 @@ function Home() {
     }
   };
 
-  const fetchRequiredDrinks = async () => {
+  const fetchRequiredDrinks = async (number) => {
     if (hasData()) setIsLoading(true);
     let data = [];
-    if (numberOfDrinks === 10 || numberOfDrinks === 20) {
+    if (number === 10 || number === 20) {
       data = await fetchDefaultData();
     }
-    if (numberOfDrinks === 30) {
+    if (number === 30) {
       data = await fetchLargeData();
     }
-    createDrinksList(data);
+    createDrinksList(data, number);
     setIsLoading(false);
   };
 
-  const trimDrinkData = (data) => {
+  const trimDrinkData = (data, number)=> {
     let trimmedData = [];
-    if (numberOfDrinks === 10) {
+    if (number === 10) {
       trimmedData = data.slice(0, 10);
-    } else if (numberOfDrinks === 20) {
+    } else if (number === 20) {
       trimmedData = data.slice(0, 20);
-    } else if (numberOfDrinks === 30) {
+    } else if (number === 30) {
       trimmedData = data;
     }
     return trimmedData;
   };
 
-  const createDrinksList = (data) => {
-    const drinksRequired = trimDrinkData(data);
+  const createDrinksList = (data, number) => {
+    const drinksRequired = trimDrinkData(data, number);
     const drinksList = drinksRequired.map((drink) => {
       return {
         id: drink.id,
@@ -89,7 +90,15 @@ function Home() {
   };
 
   useEffect(() => {
-    fetchRequiredDrinks(numberOfDrinks);
+    const sessionNumberOfDrinks = sessionStorage.getItem('numberOfDrinks');
+    console.log(sessionNumberOfDrinks, "session no");
+    if (sessionNumberOfDrinks) {
+      const parsedNumber = parseInt(sessionNumberOfDrinks);
+      console.log(parsedNumber, "parsed no");
+      fetchRequiredDrinks(parsedNumber);
+    } else {
+      fetchRequiredDrinks(numberOfDrinks);
+    }
   }, [numberOfDrinks]);
 
   return (
