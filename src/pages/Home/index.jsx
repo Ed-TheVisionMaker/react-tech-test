@@ -23,7 +23,7 @@ function Home() {
   };
 
   const handleClickAway = () => {
-    setShowDropdown((setShowDropdown) => !setShowDropdown);
+    setShowDropdown(false);
   };
 
   const hasData = () => {
