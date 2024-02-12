@@ -91,10 +91,8 @@ function Home() {
 
   useEffect(() => {
     const sessionNumberOfDrinks = sessionStorage.getItem('numberOfDrinks');
-    console.log(sessionNumberOfDrinks, "session no");
     if (sessionNumberOfDrinks) {
       const parsedNumber = parseInt(sessionNumberOfDrinks);
-      console.log(parsedNumber, "parsed no");
       fetchRequiredDrinks(parsedNumber);
     } else {
       fetchRequiredDrinks(numberOfDrinks);
