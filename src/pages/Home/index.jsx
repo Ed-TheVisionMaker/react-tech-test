@@ -64,7 +64,7 @@ function Home() {
     setIsLoading(false);
   };
 
-  const trimDrinkData = (data, drinksNumber)=> {
+  const trimDrinkData = (data, drinksNumber) => {
     let trimmedData = [];
     if (drinksNumber === 10) {
       trimmedData = data.slice(0, 10);

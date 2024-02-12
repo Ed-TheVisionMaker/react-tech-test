@@ -17,7 +17,7 @@ function DropdownMenu(props) {
     if (storedNumberOfDrinks) {
       setNumberOfDrinks(parseInt(storedNumberOfDrinks));
     }
-  }, [])
+  }, []);
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
