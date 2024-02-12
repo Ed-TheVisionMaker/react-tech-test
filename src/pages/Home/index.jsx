@@ -19,6 +19,7 @@ function Home() {
   const handleNumberChange = (e) => {
     const parsedDrinksNumber = parseInt(e.target.innerText);
     setNumberOfDrinks(parsedDrinksNumber);
+    sessionStorage.setItem('numberOfDrinks', parsedDrinksNumber);
     setShowDropdown((setShowDropdown) => !setShowDropdown);
   };
 
@@ -50,33 +51,33 @@ function Home() {
     }
   };
 
-  const fetchRequiredDrinks = async () => {
+  const fetchRequiredDrinks = async (drinksNumber) => {
     if (hasData()) setIsLoading(true);
     let data = [];
-    if (numberOfDrinks === 10 || numberOfDrinks === 20) {
+    if (drinksNumber === 10 || drinksNumber === 20) {
       data = await fetchDefaultData();
     }
-    if (numberOfDrinks === 30) {
+    if (drinksNumber === 30) {
       data = await fetchLargeData();
     }
-    createDrinksList(data);
+    createDrinksList(data, drinksNumber);
     setIsLoading(false);
   };
 
-  const trimDrinkData = (data) => {
+  const trimDrinkData = (data, drinksNumber) => {
     let trimmedData = [];
-    if (numberOfDrinks === 10) {
+    if (drinksNumber === 10) {
       trimmedData = data.slice(0, 10);
-    } else if (numberOfDrinks === 20) {
+    } else if (drinksNumber === 20) {
       trimmedData = data.slice(0, 20);
-    } else if (numberOfDrinks === 30) {
+    } else if (drinksNumber === 30) {
       trimmedData = data;
     }
     return trimmedData;
   };
 
-  const createDrinksList = (data) => {
-    const drinksRequired = trimDrinkData(data);
+  const createDrinksList = (data, drinksNumber) => {
+    const drinksRequired = trimDrinkData(data, drinksNumber);
     const drinksList = drinksRequired.map((drink) => {
       return {
         id: drink.id,
@@ -89,7 +90,13 @@ function Home() {
   };
 
   useEffect(() => {
-    fetchRequiredDrinks(numberOfDrinks);
+    const sessionNumberOfDrinks = sessionStorage.getItem('numberOfDrinks');
+    if (sessionNumberOfDrinks) {
+      const parsedNumber = parseInt(sessionNumberOfDrinks);
+      fetchRequiredDrinks(parsedNumber);
+    } else {
+      fetchRequiredDrinks(numberOfDrinks);
+    }
   }, [numberOfDrinks]);
 
   return (
@@ -105,6 +112,7 @@ function Home() {
               <span className='home-dropdown-text-span'>
                 <Dropdown
                   numberOfDrinks={numberOfDrinks}
+                  setNumberOfDrinks={setNumberOfDrinks}
                   handleNumberChange={handleNumberChange}
                   handleShowDropdown={handleShowDropdown}
                   showDropdown={showDropdown}
